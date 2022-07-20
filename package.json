@@ -1,0 +1,32 @@
+{
+  "name": "cypressgrep",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:tag:regression": "cypress run --env grepTags=\"@regression\"",
+    "test:tag:smokeAndregression": "cypress run --env grepTags=\"@smoke+@regression\"",
+    "test:tag:smokeOrregression": "cypress run --env grepTags=\"@smoke @regression\"",
+    "test:tag:smoke": "cypress run --env grep=\"smoke\"",
+    "test:tag:sprint": "cypress run --env grep=\"sprint\"",
+    "test:tag:invertRegression": "cypress run --env grepTags=\"-@regression \"",
+    "test:tag:invertSmoke":"cypress run --env grepTags=\"-@smoke \" --spec \"cypress/integration/groups/tc_group_2.js\"",
+    "test:tag:invertSprint":"cypress run --env grepTags=\"-@sprint \" --spec \"cypress/integration/groups/tc_group_2.js\"",
+    "test:tag:space": "cypress run --env grepTags=\"@space\""
+
+   
+    
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "9.7",
+    "npx": "^10.2.2"
+  },
+  "devDependencies": {
+    "cypress-grep": "^2.5.2"
+  }
+}
